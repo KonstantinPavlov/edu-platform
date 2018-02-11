@@ -1,0 +1,19 @@
+version: '2'
+services:
+    eduplatform-app:
+        image: eduplatform
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://eduplatform-mysql:3306/eduplatform?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=eduplatform-elasticsearch:9300
+        ports:
+            - 8080:8080
+    eduplatform-mysql:
+        extends:
+            file: mysql.yml
+            service: eduplatform-mysql
+    eduplatform-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: eduplatform-elasticsearch
