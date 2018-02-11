@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "resources",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "course"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "courses",
+            "relationshipName": "lessons",
+            "otherEntityName": "lesson",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "payments",
+            "otherEntityName": "paymentInfo",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "course"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "programs",
+            "otherEntityName": "program",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "courses"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "courseTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "courseDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseLevel",
+            "fieldType": "Level",
+            "fieldValues": "NOVICE,BEGINNER,INTERMEDIATE,ADVANCED,PROFESSIONAL"
+        },
+        {
+            "fieldName": "chargeable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "paymentAmount",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180211131833",
+    "entityTableName": "course",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

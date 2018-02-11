@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "courses",
+            "otherEntityName": "course",
+            "otherEntityRelationshipName": "student"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "payments",
+            "otherEntityName": "paymentInfo",
+            "otherEntityRelationshipName": "student"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "userId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180211131829",
+    "entityTableName": "student",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

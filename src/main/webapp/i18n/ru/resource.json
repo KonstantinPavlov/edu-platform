@@ -1,0 +1,33 @@
+
+{
+    "eduPlatformApp": {
+        "resource" : {
+            "home": {
+                "title": "Resources",
+                "createLabel": "Создать новый Resource",
+                "createOrEditLabel": "Создать или отредактировать Resource",
+                "search": "Найти Resource"
+            },
+            "created": "Новый Resource создан с идентификатором {{ param }}",
+            "updated": "Resource обновлен с идентификатором {{ param }}",
+            "deleted": "Resource удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Resource {{ id }}?"
+            },
+            "detail": {
+                "title": "Resource"
+            },
+            "resourceName": "Resource Name",
+            "resourceDescription": "Resource Description",
+            "resourceURL": "Resource URL",
+            "resourcePreviewImage": "Resource Preview Image",
+            "resourceType": "Resource Type",
+            "weight": "Weight",
+            "news": "News",
+            "discipline": "Discipline",
+            "program": "Program",
+            "course": "Course",
+            "lesson": "Lesson"
+        }
+    }
+}

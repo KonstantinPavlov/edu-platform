@@ -1,0 +1,76 @@
+
+<div *ngIf="resource">
+    <h2><span jhiTranslate="eduPlatformApp.resource.detail.title">Resource</span> {{resource.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="eduPlatformApp.resource.resourceName">Resource Name</span></dt>
+        <dd>
+            <span>{{resource.resourceName}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.resourceDescription">Resource Description</span></dt>
+        <dd>
+            <span>{{resource.resourceDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.resourceURL">Resource URL</span></dt>
+        <dd>
+            <span>{{resource.resourceURL}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.resourcePreviewImage">Resource Preview Image</span></dt>
+        <dd>
+            <span>{{resource.resourcePreviewImage}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.resourceType">Resource Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'eduPlatformApp.ResourceType.' + resource.resourceType}}">{{resource.resourceType}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.weight">Weight</span></dt>
+        <dd>
+            <span>{{resource.weight}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.news">News</span></dt>
+        <dd>
+            <div *ngIf="resource.newsId">
+                <a [routerLink]="['/news', resource.newsId]">{{resource.newsId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.discipline">Discipline</span></dt>
+        <dd>
+            <div *ngIf="resource.disciplineId">
+                <a [routerLink]="['/discipline', resource.disciplineId]">{{resource.disciplineId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.program">Program</span></dt>
+        <dd>
+            <div *ngIf="resource.programId">
+                <a [routerLink]="['/program', resource.programId]">{{resource.programId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.course">Course</span></dt>
+        <dd>
+            <div *ngIf="resource.courseId">
+                <a [routerLink]="['/course', resource.courseId]">{{resource.courseId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.resource.lesson">Lesson</span></dt>
+        <dd>
+            <div *ngIf="resource.lessonId">
+                <a [routerLink]="['/lesson', resource.lessonId]">{{resource.lessonId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'resource/'+ resource.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

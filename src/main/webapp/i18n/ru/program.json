@@ -1,0 +1,27 @@
+
+{
+    "eduPlatformApp": {
+        "program" : {
+            "home": {
+                "title": "Programs",
+                "createLabel": "Создать новый Program",
+                "createOrEditLabel": "Создать или отредактировать Program",
+                "search": "Найти Program"
+            },
+            "created": "Новый Program создан с идентификатором {{ param }}",
+            "updated": "Program обновлен с идентификатором {{ param }}",
+            "deleted": "Program удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Program {{ id }}?"
+            },
+            "detail": {
+                "title": "Program"
+            },
+            "programName": "Program Name",
+            "programDescription": "Program Description",
+            "resources": "Resources",
+            "courses": "Courses",
+            "disciplines": "Disciplines"
+        }
+    }
+}

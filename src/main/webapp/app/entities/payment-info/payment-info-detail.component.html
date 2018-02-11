@@ -1,0 +1,42 @@
+
+<div *ngIf="paymentInfo">
+    <h2><span jhiTranslate="eduPlatformApp.paymentInfo.detail.title">Payment Info</span> {{paymentInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="eduPlatformApp.paymentInfo.paymentDate">Payment Date</span></dt>
+        <dd>
+            <span>{{paymentInfo.paymentDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.paymentInfo.paymentAmount">Payment Amount</span></dt>
+        <dd>
+            <span>{{paymentInfo.paymentAmount}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.paymentInfo.course">Course</span></dt>
+        <dd>
+            <div *ngIf="paymentInfo.courseId">
+                <a [routerLink]="['/course', paymentInfo.courseId]">{{paymentInfo.courseId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.paymentInfo.student">Student</span></dt>
+        <dd>
+            <div *ngIf="paymentInfo.studentId">
+                <a [routerLink]="['/student', paymentInfo.studentId]">{{paymentInfo.studentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'payment-info/'+ paymentInfo.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
