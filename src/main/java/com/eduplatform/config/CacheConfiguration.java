@@ -43,6 +43,23 @@ public class CacheConfiguration {
             cm.createCache(com.eduplatform.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.eduplatform.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.eduplatform.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.News.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.News.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.News.class.getName() + ".comments", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.NewsComments.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Student.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Student.class.getName() + ".courses", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Student.class.getName() + ".payments", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.PaymentInfo.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Program.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Program.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Program.class.getName() + ".cources", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Course.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Course.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Course.class.getName() + ".lessons", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Lesson.class.getName(), jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Lesson.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.eduplatform.domain.Resource.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
