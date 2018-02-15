@@ -1,0 +1,26 @@
+
+{
+    "eduPlatformApp": {
+        "newsComments" : {
+            "home": {
+                "title": "News Comments",
+                "createLabel": "Создать новый News Comments",
+                "createOrEditLabel": "Создать или отредактировать News Comments",
+                "search": "Найти News Comments"
+            },
+            "created": "Новый News Comments создан с идентификатором {{ param }}",
+            "updated": "News Comments обновлен с идентификатором {{ param }}",
+            "deleted": "News Comments удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить News Comments {{ id }}?"
+            },
+            "detail": {
+                "title": "News Comments"
+            },
+            "userId": "User Id",
+            "comment": "Comment",
+            "commentDate": "Comment Date",
+            "news": "News"
+        }
+    }
+}

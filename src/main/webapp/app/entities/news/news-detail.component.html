@@ -1,0 +1,38 @@
+
+<div *ngIf="news">
+    <h2><span jhiTranslate="eduPlatformApp.news.detail.title">News</span> {{news.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="eduPlatformApp.news.newsHeader">News Header</span></dt>
+        <dd>
+            <span>{{news.newsHeader}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.news.newsImage">News Image</span></dt>
+        <dd>
+            <span>{{news.newsImage}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.news.newsDescription">News Description</span></dt>
+        <dd>
+            <span>{{news.newsDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.news.newsDate">News Date</span></dt>
+        <dd>
+            <span>{{news.newsDate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'news/'+ news.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

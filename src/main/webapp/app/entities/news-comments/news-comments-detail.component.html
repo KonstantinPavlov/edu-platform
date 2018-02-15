@@ -1,0 +1,40 @@
+
+<div *ngIf="newsComments">
+    <h2><span jhiTranslate="eduPlatformApp.newsComments.detail.title">News Comments</span> {{newsComments.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="eduPlatformApp.newsComments.userId">User Id</span></dt>
+        <dd>
+            <span>{{newsComments.userId}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.newsComments.comment">Comment</span></dt>
+        <dd>
+            <span>{{newsComments.comment}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.newsComments.commentDate">Comment Date</span></dt>
+        <dd>
+            <span>{{newsComments.commentDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="eduPlatformApp.newsComments.news">News</span></dt>
+        <dd>
+            <div *ngIf="newsComments.newsId">
+                <a [routerLink]="['/news', newsComments.newsId]">{{newsComments.newsId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'news-comments/'+ newsComments.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

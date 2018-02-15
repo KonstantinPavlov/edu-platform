@@ -1,0 +1,26 @@
+
+{
+    "eduPlatformApp": {
+        "paymentInfo" : {
+            "home": {
+                "title": "Payment Infos",
+                "createLabel": "Создать новый Payment Info",
+                "createOrEditLabel": "Создать или отредактировать Payment Info",
+                "search": "Найти Payment Info"
+            },
+            "created": "Новый Payment Info создан с идентификатором {{ param }}",
+            "updated": "Payment Info обновлен с идентификатором {{ param }}",
+            "deleted": "Payment Info удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Payment Info {{ id }}?"
+            },
+            "detail": {
+                "title": "Payment Info"
+            },
+            "paymentDate": "Payment Date",
+            "paymentAmount": "Payment Amount",
+            "course": "Course",
+            "student": "Student"
+        }
+    }
+}

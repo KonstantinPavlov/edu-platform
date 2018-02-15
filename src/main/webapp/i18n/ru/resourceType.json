@@ -1,0 +1,11 @@
+{
+    "eduPlatformApp": {
+        "ResourceType" : {
+            "null": "",
+            "VIDEO": "VIDEO",
+            "IMAGE": "IMAGE",
+            "TUTORIAL": "TUTORIAL",
+            "PAGE": "PAGE"
+        }
+    }
+}

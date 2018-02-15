@@ -1,0 +1,32 @@
+
+{
+    "eduPlatformApp": {
+        "course" : {
+            "home": {
+                "title": "Courses",
+                "createLabel": "Создать новый Course",
+                "createOrEditLabel": "Создать или отредактировать Course",
+                "search": "Найти Course"
+            },
+            "created": "Новый Course создан с идентификатором {{ param }}",
+            "updated": "Course обновлен с идентификатором {{ param }}",
+            "deleted": "Course удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Course {{ id }}?"
+            },
+            "detail": {
+                "title": "Course"
+            },
+            "courseTitle": "Course Title",
+            "courseDescription": "Course Description",
+            "courseLevel": "Course Level",
+            "chargeable": "Chargeable",
+            "paymentAmount": "Payment Amount",
+            "student": "Student",
+            "program": "Program",
+            "resources": "Resources",
+            "lessons": "Lessons",
+            "payments": "Payments"
+        }
+    }
+}
