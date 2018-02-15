@@ -1,0 +1,88 @@
+entity News{
+	newsHeader String required,
+    newsImage String,
+	newsDescription String, 
+	newsDate ZonedDateTime 
+}
+
+entity NewsComments{
+	userId Long,
+    comment String required,
+    commentDate ZonedDateTime, 
+}
+
+entity Student{
+    userId Long required
+}
+
+entity PaymentInfo{
+	paymentDate ZonedDateTime,
+    paymentAmount Long
+}
+
+entity Program {
+	programName String required,
+	programDescription String,   
+}
+
+entity Course {
+	courseTitle String required,
+    courseDescription String,  
+    courseLevel Level,
+    chargeable Boolean,
+    paymentAmount Long
+}
+
+entity Lesson {
+	lessonTitle String required,
+	lessonDescription String,
+    language Language
+}
+
+entity Resource {
+	resourceName String,
+    resourceDescription String,
+    resourceURL String,
+    resourcePreviewImage String,
+    resourceType ResourceType,
+    weight Integer
+}
+
+enum Level {
+	NOVICE, BEGINNER, INTERMEDIATE, ADVANCED, PROFESSIONAL
+}
+
+enum ResourceType {
+	VIDEO, IMAGE, TUTORIAL, PAGE
+}
+
+enum Language {
+    ENGLISH, RUSSIAN
+}
+
+relationship OneToMany {	
+	Program{resources} to Resource,
+    Program{cources} to Course,
+    Course{resources} to Resource,
+    Course{lessons} to Lesson,
+    Lesson{resources} to Resource,
+    News{resources} to Resource,
+    News{comments} to NewsComments,
+    Student{courses} to Course
+}
+
+relationship OneToOne {
+	PaymentInfo{course} to Course{payments}
+}
+
+relationship ManyToOne {
+	PaymentInfo{student} to Student{payments}
+}
+
+paginate Lesson, News with infinite-scroll
+
+paginate Program, Course, Resource with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl 
